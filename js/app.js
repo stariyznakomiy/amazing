@@ -10805,7 +10805,7 @@
             if (window.screen.availWidth > 768) {
                 menuClose();
                 const spollerTitle = document.querySelector(".additional__button-title");
-                if (!spollerTitle.classList.contains("_spoller-active")) {
+                if (spollerTitle) if (!spollerTitle.classList.contains("_spoller-active")) {
                     spollerTitle.classList.add("_spoller-active");
                     spollerTitle.nextElementSibling.hidden = false;
                 }
