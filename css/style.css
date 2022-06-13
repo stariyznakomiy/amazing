@@ -2160,9 +2160,9 @@ h4 {
 
 .additional {
   position: relative;
-  background: url(../img/pattern/222x.svg), -webkit-gradient(linear, left top, left bottom, from(#081D25), color-stop(0.01%, #183D4A), to(#081D25));
-  background: url(../img/pattern/222x.svg), -o-linear-gradient(top, #081D25 0%, #183D4A 0.01%, #081D25 100%);
-  background: url(../img/pattern/222x.svg), linear-gradient(180deg, #081D25 0%, #183D4A 0.01%, #081D25 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#081D25), color-stop(0.01%, #183D4A), to(#081D25));
+  background: -o-linear-gradient(top, #081D25 0%, #183D4A 0.01%, #081D25 100%);
+  background: linear-gradient(180deg, #081D25 0%, #183D4A 0.01%, #081D25 100%);
   background-blend-mode: soft-light, normal;
   min-height: 810px;
   -ms-flex-negative: 0;
