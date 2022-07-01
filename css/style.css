@@ -1098,15 +1098,20 @@ h4 {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-}
-
-.footer__menu-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.footer__menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-column-gap: 62px;
      -moz-column-gap: 62px;
           column-gap: 62px;
@@ -1257,11 +1262,6 @@ h4 {
   margin: 0px 0px 25px 0px;
 }
 
-.page__advantages .faq__image {
-  left: -107px;
-  top: 530px;
-}
-
 .page__advantages .faq__body {
   padding: 142px 0px;
 }
@@ -1305,17 +1305,12 @@ h4 {
   padding: 12px 0px 0px 0px;
 }
 
-.page__download .faq {
+.page__download .faq__container {
   min-height: 1390px;
 }
 
 .page__download .faq__body {
   padding: 152px 0px 168px;
-}
-
-.page__download .faq__image {
-  left: -109px;
-  top: 540px;
 }
 
 .page__download .faq__title {
@@ -1513,7 +1508,7 @@ h4 {
   height: 340px;
   overflow: hidden;
   background: #E9F5F9;
-  padding: 0px 30px 33px 37px;
+  padding-bottom: 33px;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -1584,11 +1579,13 @@ h4 {
 }
 
 .item-advantages__text {
+  background: #E9F5F9;
+  padding: 30px 30px 0px 37px;
   position: relative;
-  max-height: 93px;
-  -webkit-transition: all 2s ease 0s;
-  -o-transition: all 2s ease 0s;
-  transition: all 2s ease 0s;
+  max-height: 123px;
+  -webkit-transition: max-height 2s ease 0s;
+  -o-transition: max-height 2s ease 0s;
+  transition: max-height 2s ease 0s;
 }
 
 .item-advantages__text br {
@@ -2069,9 +2066,9 @@ h4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 20px;
-     -moz-column-gap: 20px;
-          column-gap: 20px;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2514,7 +2511,7 @@ h4 {
 .faq__image {
   position: absolute;
   left: -88px;
-  top: 329px;
+  bottom: -125px;
   z-index: -1;
 }
 
@@ -4673,7 +4670,7 @@ a.plyr__control::before {
 }
 
 @media (min-width: 61.99875em) {
-  .page__advantages .faq {
+  .page__advantages .faq__container {
     min-height: 1391px;
   }
 
@@ -4689,7 +4686,7 @@ a.plyr__control::before {
     padding: 50px 0px 0px 0px;
   }
 
-  .faq {
+  .faq__container {
     min-height: 1170px;
   }
 
@@ -4813,6 +4810,12 @@ a.plyr__control::before {
     height: 15px !important;
     width: 15px !important;
   }
+
+  .footer__body {
+    -webkit-column-gap: 45px;
+       -moz-column-gap: 45px;
+            column-gap: 45px;
+  }
 }
 
 @media (max-width: 48em) {
@@ -4825,6 +4828,21 @@ a.plyr__control::before {
 @media (max-width: 767px) {
   .plyr__time + .plyr__time {
     display: none;
+  }
+}
+
+@media (max-width: 97.5em) {
+  .page__faq .faq__image img {
+    max-width: 100%;
+  }
+
+  .faq__image img {
+    max-width: 80%;
+  }
+
+  .faq__image {
+    left: 0;
+    bottom: -105px;
   }
 }
 
@@ -4841,13 +4859,8 @@ a.plyr__control::before {
             column-gap: 40px;
   }
 
-  .page__download .faq {
+  .page__download .faq__container {
     min-height: 1170px;
-  }
-
-  .page__download .faq__image {
-    left: -88px;
-    top: 329px;
   }
 
   .page__faq .faq__image {
@@ -4966,9 +4979,6 @@ a.plyr__control::before {
   }
 
   .footer__body {
-    -webkit-column-gap: 20px;
-       -moz-column-gap: 20px;
-            column-gap: 20px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -4994,7 +5004,7 @@ a.plyr__control::before {
     padding: 72px 0px;
   }
 
-  .page__download .faq {
+  .page__download .faq__container {
     min-height: auto;
   }
 
@@ -5031,7 +5041,7 @@ a.plyr__control::before {
   }
 
   .item-advantages {
-    padding: 0px 30px 26px 30px;
+    padding-bottom: 26px;
   }
 
   .item-advantages span {
@@ -5039,6 +5049,10 @@ a.plyr__control::before {
     line-height: 30px;
     top: 43px;
     right: 39px;
+  }
+
+  .item-advantages__text {
+    padding: 30px 30px 0px 30px;
   }
 
   .item-advantages h3:not(:last-child) {
@@ -5617,7 +5631,7 @@ a.plyr__control::before {
   }
 
   .item-advantages {
-    padding: 0px 25px 21px 25px;
+    padding-bottom: 21px;
   }
 
   .item-advantages span {
@@ -5627,7 +5641,8 @@ a.plyr__control::before {
   }
 
   .item-advantages__text {
-    max-height: 110px;
+    max-height: 130px;
+    padding: 25px 25px 0px 25px;
   }
 
   .item-advantages__text br {
