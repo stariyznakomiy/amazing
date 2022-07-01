@@ -1516,10 +1516,34 @@ h4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px 30px 0px 37px;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
+  /*    &._show{
+        .item-advantages__img{
+           transform: scale(1.3);
+           opacity: .5;
+           @media (max-width: em(1365.98)){
+                opacity: 0.1;
+           }
+        }
+        span{
+           @media (max-width: em(1365.98)){
+              opacity: 0.2;
+           }
+        }
+        .item-advantages__text{
+           transition: all 2s ease 0s;
+           max-height: 400px;
+           br{
+              display: none;
+           }
+        }
+
+     } */
 }
 
 .item-advantages::after {
@@ -1530,40 +1554,39 @@ h4 {
   -webkit-transform: translate(-50%);
       -ms-transform: translate(-50%);
           transform: translate(-50%);
-  width: 90%;
+  width: 92%;
   height: 33px;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(233, 245, 249, 0.39)), to(#E9F5F9));
   background: -o-linear-gradient(top, rgba(233, 245, 249, 0.39) 0%, #E9F5F9 100%);
   background: linear-gradient(180deg, rgba(233, 245, 249, 0.39) 0%, #E9F5F9 100%);
 }
 
-.item-advantages._show .item-advantages__img {
+.item-advantages:hover .item-advantages__img {
   -webkit-transform: scale(1.3);
       -ms-transform: scale(1.3);
           transform: scale(1.3);
   opacity: 0.5;
 }
 
-.item-advantages._show .item-advantages__text {
-  -webkit-transition: all 2s ease 0s;
-  -o-transition: all 2s ease 0s;
-  transition: all 2s ease 0s;
-  max-height: 400px;
+.item-advantages:hover .item-advantages__text {
+  margin-top: 277px;
 }
 
-.item-advantages._show .item-advantages__text br {
-  display: none;
+.item-advantages:hover .item-advantages__text-wrap {
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 .item-advantages__img {
   position: absolute;
   top: 0px;
   left: 0px;
-  -webkit-transition: -webkit-transform 1.5s ease 0s;
-  transition: -webkit-transform 1.5s ease 0s;
-  -o-transition: transform 1.5s ease 0s;
-  transition: transform 1.5s ease 0s;
-  transition: transform 1.5s ease 0s, -webkit-transform 1.5s ease 0s;
+  -webkit-transition: opacity 1.5s ease 0s, -webkit-transform 1.5s ease 0s;
+  transition: opacity 1.5s ease 0s, -webkit-transform 1.5s ease 0s;
+  -o-transition: transform 1.5s ease 0s, opacity 1.5s ease 0s;
+  transition: transform 1.5s ease 0s, opacity 1.5s ease 0s;
+  transition: transform 1.5s ease 0s, opacity 1.5s ease 0s, -webkit-transform 1.5s ease 0s;
   border-radius: 15px;
 }
 
@@ -1576,20 +1599,36 @@ h4 {
   font-size: 90px;
   line-height: 30px;
   color: #EE7937;
+  opacity: 1;
+  -webkit-transition: opacity 0.8s ease 0s;
+  -o-transition: opacity 0.8s ease 0s;
+  transition: opacity 0.8s ease 0s;
 }
 
 .item-advantages__text {
-  background: #E9F5F9;
-  padding: 30px 30px 0px 37px;
   position: relative;
-  max-height: 123px;
-  -webkit-transition: max-height 2s ease 0s;
-  -o-transition: max-height 2s ease 0s;
-  transition: max-height 2s ease 0s;
+  margin-top: 185px;
+  -webkit-transition: margin-top 0.7s ease-in-out 0s, -webkit-transform 0.3s ease 0s;
+  transition: margin-top 0.7s ease-in-out 0s, -webkit-transform 0.3s ease 0s;
+  -o-transition: transform 0.3s ease 0s, margin-top 0.7s ease-in-out 0s;
+  transition: transform 0.3s ease 0s, margin-top 0.7s ease-in-out 0s;
+  transition: transform 0.3s ease 0s, margin-top 0.7s ease-in-out 0s, -webkit-transform 0.3s ease 0s;
 }
 
 .item-advantages__text br {
   display: none;
+}
+
+.item-advantages__text-wrap {
+  position: absolute;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: -webkit-transform 0.7s ease-in-out 0s;
+  transition: -webkit-transform 0.7s ease-in-out 0s;
+  -o-transition: transform 0.7s ease-in-out 0s;
+  transition: transform 0.7s ease-in-out 0s;
+  transition: transform 0.7s ease-in-out 0s, -webkit-transform 0.7s ease-in-out 0s;
 }
 
 .item-advantages h3:not(:last-child) {
@@ -2928,6 +2967,7 @@ h4 {
   -webkit-box-shadow: none;
           box-shadow: none;
   border-radius: 5px;
+  margin-left: auto;
 }
 
 .policy__body {
@@ -4837,11 +4877,11 @@ a.plyr__control::before {
   }
 
   .faq__image img {
-    max-width: 80%;
+    max-width: 75%;
   }
 
   .faq__image {
-    left: 0;
+    left: 40px;
     bottom: -105px;
   }
 }
@@ -4881,6 +4921,16 @@ a.plyr__control::before {
 
   .download__step {
     max-width: 400px;
+  }
+}
+
+@media (max-width: 85.37375em) {
+  .item-advantages:hover .item-advantages__img {
+    opacity: 0.1;
+  }
+
+  .item-advantages:hover span {
+    opacity: 0.2;
   }
 }
 
@@ -5041,7 +5091,7 @@ a.plyr__control::before {
   }
 
   .item-advantages {
-    padding-bottom: 26px;
+    padding: 30px 30px 26px 30px;
   }
 
   .item-advantages span {
@@ -5049,10 +5099,6 @@ a.plyr__control::before {
     line-height: 30px;
     top: 43px;
     right: 39px;
-  }
-
-  .item-advantages__text {
-    padding: 30px 30px 0px 30px;
   }
 
   .item-advantages h3:not(:last-child) {
@@ -5631,7 +5677,7 @@ a.plyr__control::before {
   }
 
   .item-advantages {
-    padding-bottom: 21px;
+    padding: 25px 25px 21px 25px;
   }
 
   .item-advantages span {
@@ -5642,7 +5688,6 @@ a.plyr__control::before {
 
   .item-advantages__text {
     max-height: 130px;
-    padding: 25px 25px 0px 25px;
   }
 
   .item-advantages__text br {
@@ -6376,17 +6421,6 @@ a.plyr__control::before {
   .footer__copy-wrap a:hover {
     opacity: 0.7;
     text-decoration: underline;
-  }
-
-  .item-advantages:hover .item-advantages__img {
-    -webkit-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-            transform: scale(1.3);
-    opacity: 0.5;
-  }
-
-  .item-advantages:hover .item-advantages__text {
-    max-height: 400px;
   }
 
   .item-functions:hover .item-functions__button {
